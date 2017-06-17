@@ -3,6 +3,7 @@ const mongoose = require('mongoose'),
 //
 var songsSchema = require('../models/songSchema');
 var songs = conn.model('songs',songsSchema);
+var userSongs = conn.model('userSongs',songsSchema);
  var userSchema = require('../models/userSchema');
  var users = conn.model('users',userSchema);
  var albumSchema = require('../models/albumSchema');
