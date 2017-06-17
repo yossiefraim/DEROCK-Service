@@ -1,6 +1,8 @@
 const consts = require('./consts'),
 mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
+
+
 //The server option auto_reconnect is defaulted to true
 var options = {
 server: {

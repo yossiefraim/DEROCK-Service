@@ -6,19 +6,23 @@ const express = require('express'),
 
 mongoose.Promise = global.Promise;
 
-app.set('port',port);
-app.use('/', express.static('./public'));//for API
-app.use(
-    (req,res,next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers",
-                "Origin, X-Requested-With, Content-Type, Accept");
-    res.set("Content-Type", "application/json");
-    next();
-});
-
-app.get('/getAllSongs',
+//app.set('port',port);
+// app.use('/', express.static('./public'));//for API
+// app.use(
+//     (req,res,next) => {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers",
+//                 "Origin, X-Requested-With, Content-Type, Accept");
+//     res.set("Content-Type", "application/json");
+//     next();
+// });
+app.get('/',
+  (req,res)=>{
+    console.log('home page');
+  });
+app.get('/getsongs',
     (req,res) =>{
+      console.log('path found');
       let succ = new Promise((resolve,reject)=>{ 
       if(true)
       {
@@ -38,7 +42,8 @@ app.get('/getAllSongs',
 });
 
 
-app.listen(port,
+app.listen(port,'0.0.0.0',
 () => {
 console.log(`listening on port ${port}`);
+console.log("url error"+ app.url);
 });
