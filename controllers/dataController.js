@@ -33,5 +33,49 @@ exports.getData = (()=>{
         }).catch((fromReject)=>{
           return fromReject;
         });
-});   
+}); 
+exports.login = (()=>{
+        let query = new Promise((resolve,reject)=>{
+          users.findOne({ id: { $eq: 1 } }).exec(function(err,result){
+              if (!err){
+                if(result==null){
+                  reject('error: no match');
+                }else{
+                  resolve(result);
+                }
+              }
+              else{
+                reject('error: ${err}');
+              }
+          });
 
+        });
+        return query.then((fromReslove)=>{
+          return fromReslove;
+        }).catch((fromReject)=>{
+          return fromReject;
+        });
+});    
+//get all songs
+// exports.getData = (()=>{
+//         let query = new Promise((resolve,reject)=>{
+//           songs.find({}).exec(function(err,result){
+//               if (!err){
+//                 if(result==null){
+//                   reject('error: no match');
+//                 }else{
+//                   resolve(result);
+//                 }
+//               }
+//               else{
+//                 reject('error: ${err}');
+//               }
+//           });
+
+//         });
+//         return query.then((fromReslove)=>{
+//           return fromReslove;
+//         }).catch((fromReject)=>{
+//           return fromReject;
+//         });
+// });  

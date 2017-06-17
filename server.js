@@ -40,6 +40,24 @@ app.get('/getsongs',
       res.status(200).json(fromReject);
     });  
 });
+app.get('/login',
+    (req,res) =>{
+      console.log('path found');
+      let succ = new Promise((resolve,reject)=>{ 
+      if(true)
+      {
+        resolve(data.login());
+      }else{
+        reject('error');
+      }
+    });
+
+    succ.then((fromResolve)=>{
+      res.status(200).json(fromResolve);
+    }).catch((fromReject)=>{
+      res.status(200).json(fromReject);
+    });  
+});
 
 
 app.listen(port,
