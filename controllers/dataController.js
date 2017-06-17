@@ -11,9 +11,10 @@ var songs = conn.model('songs',songsSchema);
  var playlists = conn.model('playlists',playlistSchema);
 mongoose.Promise = global.Promise;
 
+
 exports.getData = (()=>{
         let query = new Promise((resolve,reject)=>{
-          songs.find({}).exec(function(err,result){
+          songs.find({ $and: [ { recomendeSacle: { $gt: 4 } }, { recomendeSacle: { $lt: 7 } } ]}).exec(function(err,result){
               if (!err){
                 if(result==null){
                   reject('error: no match');
