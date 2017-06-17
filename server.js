@@ -1,0 +1,44 @@
+const express = require('express'),
+      app = express(),
+      data = require('./controllers/dataController'),
+      mongoose = require('mongoose'),
+      port = process.env.PORT || 3000;
+
+mongoose.Promise = global.Promise;
+
+app.set('port',port);
+app.use('/', express.static('./public'));//for API
+app.use(
+    (req,res,next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers",
+                "Origin, X-Requested-With, Content-Type, Accept");
+    res.set("Content-Type", "application/json");
+    next();
+});
+
+app.get('/getAllSongs',
+    (req,res) =>{
+      let succ = new Promise((resolve,reject)=>{ 
+      if(true)
+      {
+        console.log('1');
+        resolve(data.getData());
+      }else{
+        reject('error');
+      }
+    });
+
+    succ.then((fromResolve)=>{
+      console.log('2');
+      res.status(200).json(fromResolve);
+    }).catch((fromReject)=>{
+      res.status(200).json(fromReject);
+    });  
+});
+
+
+app.listen(port,
+() => {
+console.log(`listening on port ${port}`);
+});
