@@ -1,5 +1,6 @@
 const express = require('express'),
       app = express(),
+      bodyParser = require('body-parser'),
       data = require('./controllers/dataController'),
       mongoose = require('mongoose'),
       port = process.env.PORT || 3000;
@@ -16,6 +17,9 @@ app.use(
     res.set("Content-Type", "application/json");
     next();
 });
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+
 app.get('/',
   (req,res)=>{
     console.log('home page');

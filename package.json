@@ -9,10 +9,11 @@
   },
   "author": "",
   "engines": {
-  "node": "6.10.2"
-},
+    "node": "6.10.2"
+  },
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "mongoose": "^4.10.6"
   }
