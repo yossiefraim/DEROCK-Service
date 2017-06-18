@@ -17,9 +17,9 @@ var scale;
 var userId;
 var results={};
 
-exports.login = (()=>{
+exports.login = ((user_id)=>{
         let query = new Promise((resolve,reject)=>{
-          users.findOne({ id: { $eq: 1 } }).exec(function(err,result){
+          users.findOne({ id: { $eq: user_id } }).exec(function(err,result){
               if (!err){
                 if(result==null){
                   reject('error: no match');

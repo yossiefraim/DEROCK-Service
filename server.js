@@ -40,13 +40,13 @@ app.get('/getsongs',
       res.status(200).json(fromReject);
     });  
 });
-app.get('/login',
+app.post('/login',
     (req,res) =>{
       console.log('path found');
       let succ = new Promise((resolve,reject)=>{ 
       if(true)
       {
-        resolve(data.login());
+        resolve(data.login(req.body.id));
       }else{
         reject('error');
       }
