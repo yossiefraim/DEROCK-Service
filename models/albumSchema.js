@@ -12,6 +12,7 @@ var mongoose = require('mongoose'),
     albumDateOfIssue:String,
     likes:Number,
     favorite:Boolean,
+    genre:String,
     recomendeSacle:Number
     });
 module.exports = albumSchema;
