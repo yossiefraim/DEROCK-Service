@@ -59,6 +59,26 @@ app.get('/login',
     });  
 });
 
+app.get('/userRecomendedSongs',
+    (req,res) =>{
+      console.log('path found');
+      let succ = new Promise((resolve,reject)=>{ 
+      if(true)
+      {
+        resolve(data.userSongsData());
+      }else{
+        reject('error');
+      }
+    });
+
+    succ.then((fromResolve)=>{
+      res.status(200).json(fromResolve);
+    }).catch((fromReject)=>{
+      res.status(200).json(fromReject);
+    });  
+});
+
+
 
 app.listen(port,
 () => {

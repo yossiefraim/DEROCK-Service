@@ -1,15 +1,19 @@
 var mongoose = require('mongoose'),
-    schema = mongoose.Schema,
-    playlistSchema = new schema({
-    id:Number,
+    schema = mongoose.Schema;
+
+var songIdSchema = new schema({
+        songId:Number
+    });
+
+
+var playlistSchema = new schema({
+    _id:String,
+    userId:Number,
     PlayListName:String,
-    songs:[
-        {
-            songId:Number
-        }
-    ],
+    songs:[songIdSchema],
     likes:Number,
     favorite:Boolean,
     recomendeSacle:Number 
-    });
+    },{collection:'or'});
+
 module.exports = playlistSchema;

@@ -11,6 +11,7 @@ auto_reconnect:true,
 };
 mongoose.connect(consts.MLAB_KEY, options);
 const conn = mongoose.connection;//get default connection
+
 // Event handlers for Mongoose
 conn.on('error', function (err) {
 console.log('yossi  sdadsad Mongoose: Error: ' + err);
