@@ -17,8 +17,8 @@ var scale;
 var userId;
 var results={};
 var favorites={};
-results.userFavoriteAlbums=[];
-results.userFavoriteSongs=[];
+results.userFavoriteAlbums=[{}];
+results.userFavoriteSongs=[{}];
 
 var j=0;
 var k=0;
@@ -107,7 +107,7 @@ exports.login = ((user_id)=>{
                   else{
                     //console.log("in result"+result);
                     console.log("j="+j);
-                    results.userFavoriteSongs[j]=result;
+                    results.userFavoriteSongs[j]={result};
                     j=j+1;
                     resolve('work');
                   }
@@ -130,7 +130,7 @@ exports.login = ((user_id)=>{
                   else{
                     //console.log("in result"+result);
                     console.log("j="+k);
-                    results.userFavoriteAlbums[k]=result;
+                    results.userFavoriteAlbums[k]={result};
                     k=k+1;
                     resolve('work');
                   }
