@@ -31,7 +31,7 @@ app.get('/getsongs',
       if(true)
       {
         console.log('1');
-        resolve(data.getData());
+        resolve(data.userFavoarites(1));
       }else{
         reject('error');
       }

@@ -16,6 +16,12 @@ mongoose.Promise = global.Promise;
 var scale;
 var userId;
 var results={};
+var favorites={};
+results.userFavoriteAlbums=[];
+results.userFavoriteSongs=[];
+
+var j=0;
+var k=0;
 
 exports.login = ((user_id)=>{
         let query = new Promise((resolve,reject)=>{
@@ -26,7 +32,9 @@ exports.login = ((user_id)=>{
                 }else{
 
                   setUserId(result.id);
-                  setScale(result.recomendeSacle); 
+                  setScale(result.recomendeSacle);
+                  favorites.favoriteSongs=result.favoriteSongs;
+                  favorites.favoriteAlbums=result.favoriteAlbums; 
                   console.log("scale in login "+this.getScale());
                   resolve(this.getScale(),this.getUserId());
                 }
@@ -46,7 +54,7 @@ exports.login = ((user_id)=>{
                   }
                   else{
                     console.log("user songs scale "+scal);
-                    results.userSongs=result;
+                    results.userRecomendedSongs=result;
                     resolve(result);
                   }
                 }
@@ -63,7 +71,7 @@ exports.login = ((user_id)=>{
                   }
                   else{
                     console.log("user songs scale "+scal);
-                    results.userAlbums=result;
+                    results.userRecomendedAlbums=result;
                     resolve(result);
                   }
                 }
@@ -87,13 +95,60 @@ exports.login = ((user_id)=>{
                   reject('error: ${err}');
                 }
             });
-      });    
+      });
+      let userFavSongs = new Promise((resolve,reject)=>{
+            for(i in favorites.favoriteSongs){
+
+              songs.find({id:{$eq:favorites.favoriteSongs[i].songId}}).exec(function(err,result){
+                if(!err){
+                  if(result==null){
+                    reject('error: ${err}');
+                  }
+                  else{
+                    //console.log("in result"+result);
+                    console.log("j="+j);
+                    results.userFavoriteSongs[j]=result;
+                    j=j+1;
+                    resolve('work');
+                  }
+                }
+                else{
+                  reject('error: ${err}');
+                }
+            });
+          }   
+
+        });
+        let userFavalbums = new Promise((resolve,reject)=>{
+            for(i in favorites.favoriteAlbums){
+
+              albums.find({id:{$eq:favorites.favoriteAlbums[i].albumId}}).exec(function(err,result){
+                if(!err){
+                  if(result==null){
+                    reject('error: ${err}');
+                  }
+                  else{
+                    //console.log("in result"+result);
+                    console.log("j="+k);
+                    results.userFavoriteAlbums[k]=result;
+                    k=k+1;
+                    resolve('work');
+                  }
+                }
+                else{
+                  reject('error: ${err}');
+                }
+            });
+          }    
+        });       
       return results;
     }).catch((fromReject)=>{
           return fromReject;
         });
 
 });
+
+
 
 setScale=((temp)=>{
  this.scale=temp;
@@ -109,6 +164,8 @@ setUserId=((temp)=>{
 getUserId=(()=>{
  return this.userId;
 });
+
+
 // exports.getData = (()=>{
 //         let query = new Promise((resolve,reject)=>{
 //           songs.find({ $and: [ { recomendeSacle: { $gt: 4 } }, { recomendeSacle: { $lt: 7 } } ]}).exec(function(err,result){
