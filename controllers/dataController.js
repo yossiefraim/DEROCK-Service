@@ -17,8 +17,8 @@ var scale;
 var userId;
 var results={};
 var favorites={};
-results.userFavoriteAlbums=[{}];
-results.userFavoriteSongs=[{}];
+results.userFavoriteAlbums=[];
+results.userFavoriteSongs=[];
 
 var j=0;
 var k=0;
@@ -116,7 +116,8 @@ exports.login = ((user_id)=>{
                   reject('error: ${err}');
                 }
             });
-          }   
+          }
+          j=0;   
 
         });
         let userFavalbums = new Promise((resolve,reject)=>{
@@ -139,9 +140,12 @@ exports.login = ((user_id)=>{
                   reject('error: ${err}');
                 }
             });
-          }    
+          } 
+          k=0;   
         });       
       return results;
+      console.log("k"+k);
+      console.log("j"+j);
     }).catch((fromReject)=>{
           return fromReject;
         });

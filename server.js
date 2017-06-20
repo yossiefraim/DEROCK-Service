@@ -5,6 +5,8 @@ const express = require('express'),
       mongoose = require('mongoose'),
       port = process.env.PORT || 3000;
 
+var youtubeStream = require('youtube-audio-stream');
+
 mongoose.Promise = global.Promise;
 
 app.set('port',port);
@@ -63,23 +65,16 @@ app.post('/login',
     });  
 });
 
-app.get('/userRecomendedSongs',
+app.get('/a',
     (req,res) =>{
-      console.log('path found');
-      let succ = new Promise((resolve,reject)=>{ 
-      if(true)
-      {
-        resolve(data.userSongsData());
-      }else{
-        reject('error');
-      }
-    });
-
-    succ.then((fromResolve)=>{
-      res.status(200).json(fromResolve);
-    }).catch((fromReject)=>{
-      res.status(200).json(fromReject);
-    });  
+      var getAudio = function (req, res) {
+  var requestUrl = 'http://youtube.com/watch?v=IXWnP7gtbZc';
+  try {
+    youtubeStream(requestUrl).pipe(res);
+  } catch (exception) {
+    res.status(500).send(exception);
+  }
+} 
 });
 
 
