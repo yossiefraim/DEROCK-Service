@@ -12,6 +12,7 @@ var playlistSchema = new schema({
     PlayListName:String,
     songs:[songIdSchema],
     likes:Number,
+    genre:String,
     favorite:Boolean,
     recomendeSacle:Number 
     },{collection:'or'});
