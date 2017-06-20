@@ -42,7 +42,10 @@ app.post('/login',
       res.status(200).json(fromReject);
     });  
 });
-
+app.all('*',
+    (req,res) => {
+        res.sendFile(`${__dirname}/public/index.html`);
+    });
 app.listen(port,
 () => {
 console.log(`listening on port ${port}`);
