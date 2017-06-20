@@ -35,7 +35,6 @@ exports.login = ((user_id)=>{
                   setScale(result.recomendeSacle);
                   favorites.favoriteSongs=result.favoriteSongs;
                   favorites.favoriteAlbums=result.favoriteAlbums; 
-                  console.log("scale in login "+this.getScale());
                   resolve(this.getScale(),this.getUserId());
                 }
               }
@@ -53,7 +52,6 @@ exports.login = ((user_id)=>{
                     reject('error: ${err}');
                   }
                   else{
-                    console.log("user songs scale "+scal);
                     results.userRecomendedSongs=result;
                     resolve(result);
                   }
@@ -70,7 +68,6 @@ exports.login = ((user_id)=>{
                     reject('error: ${err}');
                   }
                   else{
-                    console.log("user songs scale "+scal);
                     results.userRecomendedAlbums=result;
                     resolve(result);
                   }
@@ -105,8 +102,6 @@ exports.login = ((user_id)=>{
                     reject('error: ${err}');
                   }
                   else{
-                    //console.log("in result"+result);
-                    console.log("j="+j);
                     results.userFavoriteSongs[j]={result};
                     j=j+1;
                     resolve('work');
@@ -129,8 +124,6 @@ exports.login = ((user_id)=>{
                     reject('error: ${err}');
                   }
                   else{
-                    //console.log("in result"+result);
-                    console.log("j="+k);
                     results.userFavoriteAlbums[k]={result};
                     k=k+1;
                     resolve('work');
@@ -144,8 +137,6 @@ exports.login = ((user_id)=>{
           k=0;   
         });       
       return results;
-      console.log("k"+k);
-      console.log("j"+j);
     }).catch((fromReject)=>{
           return fromReject;
         });
