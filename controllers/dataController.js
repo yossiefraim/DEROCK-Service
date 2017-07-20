@@ -142,6 +142,29 @@ exports.login = ((user_id)=>{
         });
 
 });
+//get all songs
+ exports.getAllSongs = (()=>{
+         let query = new Promise((resolve,reject)=>{
+           songs.find({}).exec(function(err,result){
+               if (!err){
+                 if(result==null){
+                   reject('error: no match');
+                 }else{
+                   resolve(result);
+                 }
+               }
+               else{
+                 reject('error: ${err}');
+               }
+           });
+
+        });
+         return query.then((fromReslove)=>{
+           return fromReslove;
+         }).catch((fromReject)=>{
+           return fromReject;
+         });
+ });  
 
 
 
@@ -211,26 +234,4 @@ getUserId=(()=>{
 // });
 
 
-//get all songs
-// exports.getData = (()=>{
-//         let query = new Promise((resolve,reject)=>{
-//           songs.find({}).exec(function(err,result){
-//               if (!err){
-//                 if(result==null){
-//                   reject('error: no match');
-//                 }else{
-//                   resolve(result);
-//                 }
-//               }
-//               else{
-//                 reject('error: ${err}');
-//               }
-//           });
 
-//         });
-//         return query.then((fromReslove)=>{
-//           return fromReslove;
-//         }).catch((fromReject)=>{
-//           return fromReject;
-//         });
-// });  

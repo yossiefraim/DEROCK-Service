@@ -42,6 +42,24 @@ app.post('/login',
       res.status(200).json(fromReject);
     });  
 });
+app.get('/main',
+    (req,res) =>{
+      console.log('path found');
+      let succ = new Promise((resolve,reject)=>{ 
+      if(true)
+      {
+        resolve(data.getAllSongs());
+      }else{
+        reject('error');
+      }
+    });
+
+    succ.then((fromResolve)=>{
+      res.status(200).json(fromResolve);
+    }).catch((fromReject)=>{
+      res.status(200).json(fromReject);
+    });  
+});
 app.all('*',
     (req,res) => {
         res.sendFile(`${__dirname}/public/index.html`);
