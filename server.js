@@ -42,13 +42,31 @@ app.post('/login',
       res.status(200).json(fromReject);
     });  
 });
-app.get('/main',
+app.get('/songs',
     (req,res) =>{
       console.log('path found');
       let succ = new Promise((resolve,reject)=>{ 
       if(true)
       {
         resolve(data.getAllSongs());
+      }else{
+        reject('error');
+      }
+    });
+
+    succ.then((fromResolve)=>{
+      res.status(200).json(fromResolve);
+    }).catch((fromReject)=>{
+      res.status(200).json(fromReject);
+    });  
+});
+app.get('/albums',
+    (req,res) =>{
+      console.log('path found');
+      let succ = new Promise((resolve,reject)=>{ 
+      if(true)
+      {
+        resolve(data.getAllAlbums());
       }else{
         reject('error');
       }

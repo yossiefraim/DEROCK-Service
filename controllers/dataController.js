@@ -166,6 +166,28 @@ exports.login = ((user_id)=>{
            return fromReject;
          });
  }); 
+  exports.getAllAlbums = (()=>{
+         let query = new Promise((resolve,reject)=>{
+           albums.find({}).exec(function(err,result){
+               if (!err){
+                 if(result==null){
+                   reject('error: no match');
+                 }else{
+                   resolve(result);
+                 }
+               }
+               else{
+                 reject('error: ${err}');
+               }
+           });
+
+        });
+         return query.then((fromReslove)=>{
+           return fromReslove;
+         }).catch((fromReject)=>{
+           return fromReject;
+         });
+ }); 
 
 
 setScale=((temp)=>{
