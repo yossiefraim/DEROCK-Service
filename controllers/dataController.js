@@ -19,7 +19,7 @@ var results={};
 var favorites={};
 results.userFavoriteAlbums=[];
 results.userFavoriteSongs=[];
-result.favoritePlaylists=[];
+
 
 
 var j=0;
@@ -37,7 +37,6 @@ exports.login = ((user_id)=>{
                   setScale(result.recomendeSacle);
                   favorites.favoriteSongs=result.favoriteSongs;
                   favorites.favoriteAlbums=result.favoriteAlbums; 
-                  favorites.favoritePlaylists=result.favoritePlaylists;
                   resolve(this.getScale(),this.getUserId());
                 }
               }
