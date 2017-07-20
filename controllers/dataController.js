@@ -19,6 +19,8 @@ var results={};
 var favorites={};
 results.userFavoriteAlbums=[];
 results.userFavoriteSongs=[];
+result.favoritePlaylists=[];
+
 
 var j=0;
 var k=0;
@@ -35,6 +37,7 @@ exports.login = ((user_id)=>{
                   setScale(result.recomendeSacle);
                   favorites.favoriteSongs=result.favoriteSongs;
                   favorites.favoriteAlbums=result.favoriteAlbums; 
+                  favorites.favoritePlaylists=result.favoritePlaylists;
                   resolve(this.getScale(),this.getUserId());
                 }
               }
@@ -78,7 +81,7 @@ exports.login = ((user_id)=>{
             });
       });
       let playlistData = new Promise((resolve,reject)=>{
-              playlists.find({id:{$eq:id}}).exec(function(err,result){
+              playlists.find({userId:{$eq:id}}).exec(function(err,result){
                 if(!err){
                   if(result==null){
                     reject('error: ${err}');
@@ -142,7 +145,6 @@ exports.login = ((user_id)=>{
         });
 
 });
-//get all songs
  exports.getAllSongs = (()=>{
          let query = new Promise((resolve,reject)=>{
            songs.find({}).exec(function(err,result){
@@ -164,8 +166,7 @@ exports.login = ((user_id)=>{
          }).catch((fromReject)=>{
            return fromReject;
          });
- });  
-
+ }); 
 
 
 setScale=((temp)=>{
@@ -234,4 +235,26 @@ getUserId=(()=>{
 // });
 
 
+//get all songs
+// exports.getData = (()=>{
+//         let query = new Promise((resolve,reject)=>{
+//           songs.find({}).exec(function(err,result){
+//               if (!err){
+//                 if(result==null){
+//                   reject('error: no match');
+//                 }else{
+//                   resolve(result);
+//                 }
+//               }
+//               else{
+//                 reject('error: ${err}');
+//               }
+//           });
 
+//         });
+//         return query.then((fromReslove)=>{
+//           return fromReslove;
+//         }).catch((fromReject)=>{
+//           return fromReject;
+//         });
+// });  
