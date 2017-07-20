@@ -81,7 +81,7 @@ exports.login = ((user_id)=>{
             });
       });
       let playlistData = new Promise((resolve,reject)=>{
-              playlists.find({userId:{$eq:id}}).exec(function(err,result){
+              playlists.find({id:{$eq:id}}).exec(function(err,result){
                 if(!err){
                   if(result==null){
                     reject('error: ${err}');
