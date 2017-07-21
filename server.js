@@ -78,7 +78,7 @@ app.get('/albums',
       res.status(200).json(fromReject);
     });  
 });
-app.post('/songs',
+app.post('/addSongs',
     (req,res) =>{
       console.log('path found');
       let succ = new Promise((resolve,reject)=>{ 
