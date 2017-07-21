@@ -166,6 +166,8 @@ exports.addSong = ((user_id,add_song_id)=>{
 
 });
 exports.removeSong = ((user_id,remove_song_id)=>{
+  console.log("userid="+user_id);
+  console.log("songid="+remove_song_id);
   let query = new Promise((resolve,reject)=>{
     users.update({id:user_id},{$pull:{favoriteSongs:{"songId":remove_song_id}}}).exec(function(err,result){
       if(!err){
