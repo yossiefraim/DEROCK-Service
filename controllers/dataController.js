@@ -41,7 +41,8 @@ exports.login = ((user_id)=>{
                       tempScale+=favorites.favoriteSongs[i].recomendeSacle;
                       j++;
                   }
-                  setScale(tempScale/j);
+                  tempScale=tempScale/j;
+                  setScale(tempScale);
                   j=0;
                   resolve(this.getScale(),this.getUserId());
                 }
