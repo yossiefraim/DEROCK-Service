@@ -144,6 +144,30 @@ exports.login = ((user_id)=>{
         });
 
 });
+exports.addSong = ((user_id,song_id)=>{
+  let query = new Promise((resolve,reject)=>{
+    users.update({id:user_id},{$addToSet:{favoriteSongs:{"favoriteSongs":song_id}}}).exec(function(err,result){
+      if(!err){
+                  if(result==null){
+                    reject('error: ${err}');
+                  }
+                  else{
+                    resolve('work');
+                  }
+                }
+                else{
+                  reject('error: ${err}');
+                }
+    });
+    return resolve();
+  }).catch((fromReject)=>{
+    return fromReject;
+  });
+
+});
+
+
+
  exports.getAllSongs = (()=>{
          let query = new Promise((resolve,reject)=>{
            songs.find({}).exec(function(err,result){
