@@ -24,6 +24,7 @@ results.userFavoriteSongs=[];
 
 var j=0;
 var k=0;
+var tempScale=0;
 
 exports.login = ((user_id)=>{
         let query = new Promise((resolve,reject)=>{
@@ -34,9 +35,14 @@ exports.login = ((user_id)=>{
                 }else{
 
                   setUserId(result.id);
-                  setScale(result.recomendeSacle);
                   favorites.favoriteSongs=result.favoriteSongs;
                   favorites.favoriteAlbums=result.favoriteAlbums; 
+                  for ( i in favorites.favoriteSongs){
+                      tempScale+=favorites.favoriteSongs[i].recomendeSacle;
+                      j++;
+                  }
+                  setScale(tempScale/j);
+                  j=0;
                   resolve(this.getScale(),this.getUserId());
                 }
               }
