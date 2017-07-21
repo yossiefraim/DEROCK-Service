@@ -96,7 +96,7 @@ app.post('/songs',
       res.status(200).json(fromReject);
     });  
 });
-app.post('/songs',
+app.post('/removeSongs',
     (req,res) =>{
       console.log('path found');
       let succ = new Promise((resolve,reject)=>{ 
