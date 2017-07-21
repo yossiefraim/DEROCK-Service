@@ -84,7 +84,25 @@ app.post('/songs',
       let succ = new Promise((resolve,reject)=>{ 
       if(true)
       {
-        resolve(data.addSong(req.body.id,req.body.songId));
+        resolve(data.addSong(req.body.id,req.body.addSongId));
+      }else{
+        reject('error');
+      }
+    });
+
+    succ.then((fromResolve)=>{
+      res.status(200).json(fromResolve);
+    }).catch((fromReject)=>{
+      res.status(200).json(fromReject);
+    });  
+});
+app.post('/songs',
+    (req,res) =>{
+      console.log('path found');
+      let succ = new Promise((resolve,reject)=>{ 
+      if(true)
+      {
+        resolve(data.removeSong(req.body.id,req.body.removeSongId));
       }else{
         reject('error');
       }
