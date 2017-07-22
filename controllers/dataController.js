@@ -32,7 +32,7 @@ exports.login = ((user_id)=>{
                 if(result==null){
                   reject('error: no match');
                 }else{
-
+                  
                   setUserId(result.id);
                   setScale(result.recomendeSacle);
                   favorites.favoriteSongs=result.favoriteSongs;
@@ -142,7 +142,6 @@ exports.login = ((user_id)=>{
     }).catch((fromReject)=>{
           return fromReject;
         });
-
 });
 exports.addSong = ((user_id,add_song_id)=>{
   let query = new Promise((resolve,reject)=>{
@@ -186,8 +185,6 @@ exports.removeSong = ((user_id,remove_song_id)=>{
   });
 
 });
-
-
 
  exports.getAllSongs = (()=>{
          let query = new Promise((resolve,reject)=>{
@@ -250,77 +247,3 @@ getUserId=(()=>{
  return this.userId;
 });
 
-
-// exports.getData = (()=>{
-//         let query = new Promise((resolve,reject)=>{
-//           songs.find({ $and: [ { recomendeSacle: { $gt: 4 } }, { recomendeSacle: { $lt: 7 } } ]}).exec(function(err,result){
-//               if (!err){
-//                 if(result==null){
-//                   reject('error: no match');
-//                 }else{
-//                   resolve(result);
-//                 }
-//               }
-//               else{
-//                 reject('error: ${err}');
-//               }
-//           });
-
-//         });
-//         return query.then((fromReslove)=>{
-//           return fromReslove;
-//         }).catch((fromReject)=>{
-//           return fromReject;
-//         });
-// }); 
-
-// exports.userSongsData = (()=>{
-//             let userSongData = new Promise((resolve,reject)=>{
-//               console.log("scale in user "+scale);
-//               songs.find({ $and: [ { recomendeSacle: { $gt: 5-2} }, { recomendeSacle: { $lt: 5+2 } } ]}).exec(function(err,result){
-//                 if(!err){
-//                   if(result==null){
-//                     reject('error: ${err}');
-//                   }
-//                   else{
-//                     console.log("user songs scale "+this.getScale());
-//                     resolve(result);
-//                   }
-//                 }
-//                 else{
-//                   reject('error: ${err}');
-//                 }
-//             });
-//           }); 
-//           return userSongData.then((fromReslove)=>{
-//           return fromReslove;
-//         }).catch((fromReject)=>{
-//           return fromReject;
-//         });
-
-// });
-
-
-//get all songs
-// exports.getData = (()=>{
-//         let query = new Promise((resolve,reject)=>{
-//           songs.find({}).exec(function(err,result){
-//               if (!err){
-//                 if(result==null){
-//                   reject('error: no match');
-//                 }else{
-//                   resolve(result);
-//                 }
-//               }
-//               else{
-//                 reject('error: ${err}');
-//               }
-//           });
-
-//         });
-//         return query.then((fromReslove)=>{
-//           return fromReslove;
-//         }).catch((fromReject)=>{
-//           return fromReject;
-//         });
-// });  
