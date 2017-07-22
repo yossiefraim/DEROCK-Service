@@ -2,563 +2,71 @@
   <html>
        <head>
         <title>DEROCK Web Service</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
        </head>
-             <body style="background-color: #cde1ff">
-               <p>
-                 <h1>DEROCK Web Service</h1>
-                 </p>
-               <p>
-                 <h3>Login Service</h3>
-                 <p>To receive all user data via <i><b>Post</b></i></p>
-                 <p>KEY = <b>id </b> Value = <b>Int</b></p>
-                 <p>Use the following route:<b>   /login</b></p>
-                 <p> or <a href="https://musicservice.herokuapp.com/login">Click Here</a></p>
-                   <hr>
-                 </p>
-                 <p>
-                  <p>The Login service retuen the following data:</p>
-                  <ul>
-                    <li>All Songs that the user marked as liked</li>
-                    <li>All Albums that the user marked as liked</li>
-                    <li>User playlists</li>
-                    <li>Recommended Songs for the user under average scale</li>
-                    <li>Recommended Albums for the user under average scale </li>
-                  </ul>
-                  <textarea rows="1" cols="40">https://musicservice.herokuapp.com/login</textarea>
-                  <p>Exapmle:</p>
-                  <textarea rows="17" cols="45">
-          {
-    "userFavoriteAlbums": [
-        {
-            "result": [
-                {
-                    "_id": "594455ba734d1d6a81bad490",
-                    "id": 1,
-                    "albumName": "Appetite for Destruction",
-                    "ArtistName": "Guns N Roses",
-                    "albumDateOfIssue": "Jul 1987",
-                    "likes": 0,
-                    "favorite": false,
-                    "genre": "md",
-                    "recomendeSacle": 6,
-                    "songs": [
-                        {
-                            "songId": 1
-                        },
-                        {
-                            "songId": 2
-                        },
-                        {
-                            "songId": 3
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "result": [
-                {
-                    "_id": "594454bd734d1d6a81bad45f",
-                    "id": 3,
-                    "albumName": "Stadium Arcadium",
-                    "ArtistName": "Red Hot Chili Peppers",
-                    "albumDateOfIssue": "May 2006",
-                    "likes": 0,
-                    "favorite": false,
-                    "genre": "lt",
-                    "recomendeSacle": 4,
-                    "songs": [
-                        {
-                            "songId": 7
-                        },
-                        {
-                            "songId": 8
-                        },
-                        {
-                            "songId": 9
-                        },
-                        {
-                            "songId": 10
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "result": [
-                {
-                    "_id": "5944555f734d1d6a81bad48a",
-                    "id": 2,
-                    "albumName": "Nevermind",
-                    "ArtistName": "Nirvana",
-                    "albumDateOfIssue": "Sep 1991",
-                    "likes": 0,
-                    "favorite": false,
-                    "genre": "hv",
-                    "recomendeSacle": 7,
-                    "songs": [
-                        {
-                            "songId": 4
-                        },
-                        {
-                            "songId": 5
-                        },
-                        {
-                            "songId": 6
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "result": [
-                {
-                    "_id": "59493bec734d1d539785d686",
-                    "id": 4,
-                    "albumName": "Sticky Fingers",
-                    "ArtistName": "Rooling Stones",
-                    "albumDateOfIssue": "Jul 1987",
-                    "likes": 0,
-                    "favorite": false,
-                    "genre": "md",
-                    "recomendeSacle": 6,
-                    "songs": [
-                        {
-                            "songId": 1
-                        },
-                        {
-                            "songId": 2
-                        },
-                        {
-                            "songId": 3
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "result": [
-                {
-                    "_id": "59493c19734d1d539785d6b4",
-                    "id": 5,
-                    "albumName": "The Dark Side Of The Moon",
-                    "ArtistName": "Pink Floyd",
-                    "albumDateOfIssue": "Jul 1987",
-                    "likes": 0,
-                    "favorite": false,
-                    "genre": "md",
-                    "recomendeSacle": 6,
-                    "songs": [
-                        {
-                            "songId": 1
-                        },
-                        {
-                            "songId": 2
-                        },
-                        {
-                            "songId": 3
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "result": [
-                {
-                    "_id": "59493c34734d1d539785d6bb",
-                    "id": 6,
-                    "albumName": "Rocks",
-                    "ArtistName": "Aerosmith",
-                    "albumDateOfIssue": "Jul 1987",
-                    "likes": 0,
-                    "favorite": false,
-                    "genre": "md",
-                    "recomendeSacle": 6,
-                    "songs": [
-                        {
-                            "songId": 1
-                        },
-                        {
-                            "songId": 2
-                        },
-                        {
-                            "songId": 3
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
-    "userFavoriteSongs": [
-        {
-            "result": [
-                {
-                    "_id": "59445627734d1d6a81bad4b5",
-                    "id": 5,
-                    "songName": "Come As You Are",
-                    "ArtistName": "Nirvana",
-                    "youtubeId": "vabnZ9-ex7o",
-                    "albumId": 2,
-                    "likes": 0,
-                    "favorite": false,
-                    "genre": "md",
-                    "recomendeSacle": 6
-                }
-            ]
-        },
-        {
-            "result": [
-                {
-                    "_id": "5944560e734d1d6a81bad4b2",
-                    "id": 3,
-                    "songName": "Paradise City",
-                    "ArtistName": "Guns N Roses",
-                    "youtubeId": "Rbm6GXllBiw",
-                    "albumId": 1,
-                    "likes": 0,
-                    "favorite": false,
-                    "genre": "hv",
-                    "recomendeSacle": 8
-                }
-            ]
-        },
-        {
-            "result": [
-                {
-                    "_id": "59445649734d1d6a81bad4bc",
-                    "id": 8,
-                    "songName": "Hey",
-                    "ArtistName": "Red Hot Chili Peppers",
-                    "youtubeId": "Mm9eQ1wZp48",
-                    "albumId": 3,
-                    "likes": 0,
-                    "favorite": false,
-                    "genre": "lt",
-                    "recomendeSacle": 2
-                }
-            ]
-        },
-        {
-            "result": [
-                {
-                    "_id": "59445656734d1d6a81bad4d9",
-                    "id": 9,
-                    "songName": "Tell Me Baby",
-                    "ArtistName": "Red Hot Chili Peppers",
-                    "youtubeId": "oDNcL1VP3rY",
-                    "albumId": 3,
-                    "likes": 0,
-                    "favorite": false,
-                    "genre": "lt",
-                    "recomendeSacle": 3
-                }
-            ]
-        },
-        {
-            "result": [
-                {
-                    "_id": "5944563c734d1d6a81bad4b7",
-                    "id": 7,
-                    "songName": "Hump de Bump",
-                    "ArtistName": "Red Hot Chili Peppers",
-                    "youtubeId": "OM9uMJWtNww",
-                    "albumId": 3,
-                    "likes": 0,
-                    "favorite": false,
-                    "genre": "lt",
-                    "recomendeSacle": 1
-                }
-            ]
-        },
-        {
-            "result": [
-                {
-                    "_id": "594455f7734d1d6a81bad4a1",
-                    "id": 1,
-                    "songName": "Sweet child O Mine",
-                    "ArtistName": "Guns N Roses",
-                    "youtubeId": "1w7OgIMMRc4",
-                    "albumId": 1,
-                    "likes": 0,
-                    "favorite": false,
-                    "genre": "lt",
-                    "recomendeSacle": 2
-                }
-            ]
-        },
-        {
-            "result": [
-                {
-                    "_id": "59445605734d1d6a81bad4b0",
-                    "id": 2,
-                    "songName": "Welcome To The Jungle",
-                    "ArtistName": "Guns N Roses",
-                    "youtubeId": "o1tj2zJ2Wvg",
-                    "albumId": 1,
-                    "likes": 0,
-                    "favorite": false,
-                    "genre": "md",
-                    "recomendeSacle": 4
-                }
-            ]
-        },
-        {
-            "result": [
-                {
-                    "_id": "59445631734d1d6a81bad4b6",
-                    "id": 6,
-                    "songName": "Lithium",
-                    "ArtistName": "Nirvana",
-                    "youtubeId": "pkcJEvMcnEg",
-                    "albumId": 2,
-                    "likes": 0,
-                    "favorite": false,
-                    "genre": "md",
-                    "recomendeSacle": 6
-                }
-            ]
-        }
-    ],
-    "userRecomendedSongs": [
-        {
-            "_id": "59445605734d1d6a81bad4b0",
-            "id": 2,
-            "songName": "Welcome To The Jungle",
-            "ArtistName": "Guns N Roses",
-            "youtubeId": "o1tj2zJ2Wvg",
-            "albumId": 1,
-            "likes": 0,
-            "favorite": false,
-            "genre": "md",
-            "recomendeSacle": 4
-        },
-        {
-            "_id": "59445627734d1d6a81bad4b5",
-            "id": 5,
-            "songName": "Come As You Are",
-            "ArtistName": "Nirvana",
-            "youtubeId": "vabnZ9-ex7o",
-            "albumId": 2,
-            "likes": 0,
-            "favorite": false,
-            "genre": "md",
-            "recomendeSacle": 6
-        },
-        {
-            "_id": "59445631734d1d6a81bad4b6",
-            "id": 6,
-            "songName": "Lithium",
-            "ArtistName": "Nirvana",
-            "youtubeId": "pkcJEvMcnEg",
-            "albumId": 2,
-            "likes": 0,
-            "favorite": false,
-            "genre": "md",
-            "recomendeSacle": 6
-        },
-        {
-            "_id": "59445663734d1d6a81bad4e3",
-            "id": 10,
-            "songName": "Snow",
-            "ArtistName": "Red Hot Chili Peppers",
-            "youtubeId": "yuFI5KSPAt4",
-            "albumId": 3,
-            "likes": 0,
-            "favorite": false,
-            "genre": "md",
-            "recomendeSacle": 5
-        }
-    ],
-    "userRecomendedAlbums": [
-        {
-            "_id": "594454bd734d1d6a81bad45f",
-            "id": 3,
-            "albumName": "Stadium Arcadium",
-            "ArtistName": "Red Hot Chili Peppers",
-            "albumDateOfIssue": "May 2006",
-            "likes": 0,
-            "favorite": false,
-            "genre": "lt",
-            "recomendeSacle": 4,
-            "songs": [
-                {
-                    "songId": 7
-                },
-                {
-                    "songId": 8
-                },
-                {
-                    "songId": 9
-                },
-                {
-                    "songId": 10
-                }
-            ]
-        },
-        {
-            "_id": "594455ba734d1d6a81bad490",
-            "id": 1,
-            "albumName": "Appetite for Destruction",
-            "ArtistName": "Guns N Roses",
-            "albumDateOfIssue": "Jul 1987",
-            "likes": 0,
-            "favorite": false,
-            "genre": "md",
-            "recomendeSacle": 6,
-            "songs": [
-                {
-                    "songId": 1
-                },
-                {
-                    "songId": 2
-                },
-                {
-                    "songId": 3
-                }
-            ]
-        },
-        {
-            "_id": "59493bec734d1d539785d686",
-            "id": 4,
-            "albumName": "Sticky Fingers",
-            "ArtistName": "Rooling Stones",
-            "albumDateOfIssue": "Jul 1987",
-            "likes": 0,
-            "favorite": false,
-            "genre": "md",
-            "recomendeSacle": 6,
-            "songs": [
-                {
-                    "songId": 1
-                },
-                {
-                    "songId": 2
-                },
-                {
-                    "songId": 3
-                }
-            ]
-        },
-        {
-            "_id": "59493c19734d1d539785d6b4",
-            "id": 5,
-            "albumName": "The Dark Side Of The Moon",
-            "ArtistName": "Pink Floyd",
-            "albumDateOfIssue": "Jul 1987",
-            "likes": 0,
-            "favorite": false,
-            "genre": "md",
-            "recomendeSacle": 6,
-            "songs": [
-                {
-                    "songId": 1
-                },
-                {
-                    "songId": 2
-                },
-                {
-                    "songId": 3
-                }
-            ]
-        },
-        {
-            "_id": "59493c34734d1d539785d6bb",
-            "id": 6,
-            "albumName": "Rocks",
-            "ArtistName": "Aerosmith",
-            "albumDateOfIssue": "Jul 1987",
-            "likes": 0,
-            "favorite": false,
-            "genre": "md",
-            "recomendeSacle": 6,
-            "songs": [
-                {
-                    "songId": 1
-                },
-                {
-                    "songId": 2
-                },
-                {
-                    "songId": 3
-                }
-            ]
-        }
-    ],
-    "userPlaylist": [
-        {
-            "_id": "59467596f36d28265550e32b",
-            "userId": 1,
-            "PlayListName": "Stormy Rock",
-            "likes": 6833,
-            "genre": "rain",
-            "favorite": true,
-            "recomendeSacle": 5,
-            "songs": [
-                {
-                    "songId": 1
-                }
-            ]
-        },
-        {
-            "_id": "5949384d734d1d539785d418",
-            "userId": 1,
-            "PlayListName": "Spring Rock",
-            "likes": 3765,
-            "genre": "spring",
-            "favorite": true,
-            "recomendeSacle": 5,
-            "songs": [
-                {
-                    "songId": 1
-                }
-            ]
-        },
-        {
-            "_id": "594938f4734d1d539785d465",
-            "userId": 1,
-            "PlayListName": "Summer Rock",
-            "likes": 340,
-            "genre": "summer",
-            "favorite": true,
-            "recomendeSacle": 5,
-            "songs": [
-                {
-                    "songId": 1
-                }
-            ]
-        },
-        {
-            "_id": "5949392a734d1d539785d484",
-            "userId": 1,
-            "PlayListName": "Slowly Rock",
-            "likes": 11803,
-            "genre": "Slowly",
-            "favorite": true,
-            "recomendeSacle": 5,
-            "songs": [
-                {
-                    "songId": 1
-                }
-            ]
-        },
-        {
-            "_id": "59493968734d1d539785d4e6",
-            "userId": 1,
-            "PlayListName": "Groovy Rock",
-            "likes": 5463,
-            "genre": "Groovy",
-            "favorite": true,
-            "recomendeSacle": 5,
-            "songs": [
-                {
-                    "songId": 1
-                }
-            ]
-        }
-    ]
-}
-                </textarea>
-          <hr>
-           </body>
+        <body>
+    <div class="logo"><img src="../assets/derockapi.png" ></div>
+
+<h2 class="title">DeRock general Information</h2>
+<h4 class="information">All functions requests data from DB according to user id parameter</h4>
+<hr>
+<h2 class="functionName">Login path - </h2>
+<h3 class="functionName"> Auto Redirect From '/' </h3><br>
+<h3 class="title">Path: </h3> <h4 class="url"> /login</h4><br>
+<h3 class="title">Method: </h3><h4 class="method"> POST</h4><br>
+<h3 class="title">Parameter: </h3><h4 class="param"> id</h4><br>
+<img class="img" src="../assets/login.png">
+<hr>
+<h2 class="functionName">Songs path - </h2>
+<h3 class="functionName"> Get All Songs </h3><br>
+<h3 class="title">Path: </h3> <h4 class="url"> /songs</h4><br>
+<h3 class="title">Method: </h3><h4 class="method"> GET</h4><br>
+<h3 class="title">Active Function: </h3><h4 class="method"> getAllSongs()</h4><br>
+<img class="img" src="../assets/songs.png">
+
+
+<hr>
+<h2 class="functionName">Albums path - </h2>
+<h3 class="functionName"> Get All Albums </h3><br>
+<h3 class="title">Path: </h3> <h4 class="url"> /albums</h4><br>
+<h3 class="title">Method: </h3><h4 class="method"> GET</h4><br>
+<h3 class="title">Active Function: </h3><h4 class="method"> getAllAlbums()</h4><br>
+<img class="img" src="../assets/albums.png">
+
+<hr>
+<h2 class="functionName">Add Songs - </h2>
+<h3 class="functionName"> Adding song to user favorites by song id and user id</h3><br>
+<h3 class="title">Path: </h3> <h4 class="url"> /addSongs</h4><br>
+<h3 class="title">Method: </h3><h4 class="method"> POST</h4><br>
+<h3 class="title">Parameters: </h3><h4 class="param"> id (user id), addSongId (song id)</h4><br>
+<h3 class="title">Active Function: </h3><h4 class="method"> addSong(user_id,add_song_id)</h4><br>
+
+
+<hr>
+<h2 class="functionName">Remove Songs - </h2>
+<h3 class="functionName"> Removing song from user favorites by song id and user id</h3><br>
+<h3 class="title">Path: </h3> <h4 class="url"> /addSongs</h4><br>
+<h3 class="title">Method: </h3><h4 class="method"> POST</h4><br>
+<h3 class="title">Parameters: </h3><h4 class="param"> id (user id), removeSongId (song id)</h4><br>
+<h3 class="title">Active Function: </h3><h4 class="method"> removeSong(user_id,remove_song_id)</h4><br>
+
+<hr>
+<h2 class="functionName">Recommended Songs - </h2>
+<h3 class="functionName"> Show recommended songs by scale +-2 </h3><br>
+<h3 class="title">Query: </h3><h4 class="method"> Songs.find</h4><br>
+<h3 class="title">Parameter: </h3><h4 class="param"> recomendeSacle (song scale)</h4><br>
+<img class="img" src="../assets/userSongs.png">
+<hr>
+<h2 class="functionName">Recommended Albums - </h2>
+<h3 class="functionName"> Show recommended albums by scale +-2 </h3><br>
+<h3 class="title">Query: </h3><h4 class="method"> Albums.find</h4><br>
+<h3 class="title">Parameter: </h3><h4 class="param"> recomendeSacle (song scale)</h4><br>
+<img class="img" src="../assets/userAlbums.png">
+<hr>
+
+</body>
+
+
+
        <footer>DEROCK Web Service</footer>
 </html>

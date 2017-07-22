@@ -1,0 +1,58 @@
+.logo {
+  text-align: center;
+}
+.logo img{
+  width:400px;
+  margin-top: 120px;
+}
+
+h3{
+    display: inline-block;
+}
+*{
+    background-color: #282828;
+}
+body{
+  height: 100%;
+}
+
+.title{
+  color:#385d62;
+  font-family: arial;
+
+}
+.img{
+  width:400px;
+  height:500px;
+}
+.information{
+font-family: Helvetica;
+
+  color:#fff;
+
+}
+.functionName{
+  color:#fff;
+    font-family: Helvetica;
+    display: inline-block;
+
+}
+.method{
+  color:#c6c6c6;
+    display: inline-block;
+    margin-left: 10px;
+
+}
+.url{
+  color:yellow;
+  display: inline-block;
+  margin-left: 10px;
+
+
+}
+.param{
+  color:green;
+  display: inline-block;
+  margin-left: 10px;
+
+}
